@@ -72,6 +72,39 @@ The key insight: **pick templates by joke structure, not by keyword.**
 | Hot take | Change My Mind | Controversial opinion |
 | Agreement | Epic Handshake | Common ground |
 
+## 🎛️ Humor Profiles
+
+Not all memes hit the same. The **humor profile system** is an equalizer — adjust darkness, dankness, humor style, and regional flavor to produce memes that match your audience.
+
+### The Equalizer
+
+| Slider | Options | Default |
+|--------|---------|--------|
+| 🌡️ **Darkness** | 1: Clean → 5: Nuclear ☢️ | Level 2 (Light) |
+| 📊 **Dank Meter** | Normie → Dank → Deep Fried → Surreal → Shitpost | Normie-Dank |
+| 🎨 **Style** | Sarcasm · Absurdist · Self-deprecating · Deadpan · Wholesome · Roast · Meta · Shitpost | Contextual |
+| 🌎 **Geo** | 🇲🇽 MX · 🇦🇷 AR · 🇪🇸 ES · 🇺🇸 US · 🇧🇷 BR · 🇨🇴 CO · 🌎 LATAM | Neutral |
+
+### Darkness Levels at a Glance
+
+| Level | Name | Vibe | Example |
+|-------|------|------|---------|
+| 1 | ☀️ Clean | Grandma-approved | Success Kid: "Finished my homework / Before midnight" |
+| 2 | 🌤️ Light | Water cooler | Drake: "Writing docs" / "Writing memes" |
+| 3 | 🌶️ Spicy | Close friends | This is Fine: "Production down" / "This is fine" |
+| 4 | 🌑 Dark | That one group chat | Harold hiding pain about real problems |
+| 5 | ☢️ Nuclear | Opt-in only | Deep fried, distorted, 💀💀💀 |
+
+### Deep Fry Script
+
+For Level 5 / Deep Fried memes, use the included image processor:
+
+```bash
+python3 scripts/deep-fry.py input.png output.png --level 4 --emojis --flare
+```
+
+📖 **Full reference:** [humor-profiles.md](humor-profiles.md) — includes regional humor guides for 🇲🇽🇦🇷🇪🇸🇺🇸🇧🇷🇨🇴, Pillow code snippets for visual effects, style definitions with template affinities, and combination examples.
+
 ## Getting Trending Templates
 
 ### Imgflip API (free, no auth)
@@ -101,12 +134,14 @@ python3 scripts/imgflip-trending.py --limit 20
 
 ```
 ├── SKILL.md                     # Core knowledge file (include this in your agent)
+├── humor-profiles.md            # 🎛️ Humor equalizer — darkness, dankness, style, geo
 ├── references/
 │   ├── api.md                   # memegen.link API reference
 │   ├── templates-classic.md     # 30 hardcoded fallback templates with URLs
 │   ├── templates-trending.md    # How to fetch trending templates
 │   └── research-improvements.md # Future improvement research
 ├── scripts/
+│   ├── deep-fry.py              # 🔥 Deep fry image post-processor (Pillow)
 │   ├── imgflip-trending.py      # Scrape Imgflip trending templates
 │   ├── reddit-trending.sh       # Fetch from r/MemeTemplates (OAuth)
 │   └── giphy-search.sh          # Search Giphy for reaction GIFs
@@ -173,8 +208,9 @@ Contributions welcome! Some ideas:
 - Add more template profiles to `SKILL.md`
 - Improve the rhetorical pattern taxonomy
 - Add integration guides for other frameworks (CrewAI, AutoGen, etc.)
-- Curate regional meme template collections
+- Expand regional humor profiles in `humor-profiles.md` (PRs for your country welcome!)
 - Add more trending template scrapers
+- Improve the deep fry script with new effects
 
 ## License
 
