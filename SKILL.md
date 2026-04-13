@@ -81,6 +81,69 @@ If the file is empty or <1KB, the template ID is probably wrong.
 3. BUT — if a specific template is clearly the best fit for the joke, use it even if recent
 4. After generating, log the template used for future reference
 
+## Humor Configuration
+
+This skill includes a **humor profile system** — an equalizer for meme tone, darkness, and cultural targeting. See [`humor-profiles.md`](humor-profiles.md) for the full reference.
+
+### Default Profile
+
+| Slider | Default | Range |
+|--------|---------|-------|
+| **Darkness** | Level 2 (Light) | 1: Clean → 5: Nuclear ☢️ |
+| **Dank Meter** | Normie-Dank | Normie → Dank → Deep Fried → Surreal → Shitpost |
+| **Style** | Contextual (auto-detect) | Sarcasm · Absurdist · Self-deprecating · Deadpan · Wholesome · Roast · Meta · Shitpost |
+| **Geo** | Neutral | 🇲🇽 MX · 🇦🇷 AR · 🇪🇸 ES · 🇺🇸 US · 🇧🇷 BR · 🇨🇴 CO · 🌎 LATAM |
+
+### How the Same Topic Hits Different
+
+**Topic: "My code has bugs"**
+
+**Level 1 + Wholesome + Normie:**
+```
+Template: success | "Found a bug / Fixed it on first try"
+```
+
+**Level 2 + Sarcasm + Dank:**
+```
+Template: fry | "Not sure if my code works / Or the tests are just broken too"
+```
+
+**Level 3 + Sarcasm + Dank:**
+```
+Template: fine | "Production is on fire / This is fine, it's a feature"
+```
+
+**Level 4 + Deadpan + Dank (🇲🇽):**
+```
+Template: harold | "Cuando dices 'ya casi queda' y llevas 3 horas / Pero sonríes porque el deploy es mañana"
+```
+
+**Level 5 + Shitpost + Deep Fried:**
+```
+Template: custom deep-fried | "BRUH THE CODE 💀💀💀 / IT COMPILES THO 😤🔥💯"
+```
+
+### Usage in Prompts
+
+```
+Generate a meme about [topic].
+Humor profile: Level 3, Dank, Sarcasm, 🇲🇽
+```
+
+Or let the agent auto-detect from context (language used, group chat culture, conversation tone).
+
+### Deep Fry Post-Processing
+
+For Level 5 / Deep Fried memes, use the included script:
+
+```bash
+python3 scripts/deep-fry.py meme.png fried.png --level 4 --emojis --flare
+```
+
+Requires: `pip install pillow`
+
+---
+
 ## Template Selection Guide
 
 Pick templates by **rhetorical pattern** first, then tone. Each entry includes:
