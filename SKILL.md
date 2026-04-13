@@ -146,6 +146,9 @@ Requires: `pip install pillow`
 
 ## Template Selection Guide
 
+> **For ALL 207 templates with rhetorical patterns and examples, see [references/templates-complete.md](references/templates-complete.md)**
+> **For a quick-reference index, see [references/template-index.md](references/template-index.md)**
+
 Pick templates by **rhetorical pattern** first, then tone. Each entry includes:
 - **Formula**: the semantic structure of the joke
 - **Tone**: sarcastic, wholesome, self-deprecating, absurd, smug, panicked, etc.
